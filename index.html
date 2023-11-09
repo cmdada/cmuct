@@ -4,43 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>CMU CS Academy IDE's Graphics Processing Evaluation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
     <style>
         :root {
-            --fg-color: #000000;
-            --bg-color: #ffffff;
-            --sub-color: #666666;
-            --link-color: #1155cc;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --fg-color: #ffffff;
-                --bg-color: #333333;
-                --sub-color: #999999;
-                --link-color: #66aaff;
-            }
+            --content-color: #212121;
+            --primary-color: #5e35b1;
+            --secondary-color: #fdd835;
+            --background-color: #ffffff;
+            --link-color: #0D47A1;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            color: var(--fg-color);
-            background-color: var(--bg-color);
+            font-family: 'Roboto', sans-serif;
+            color: var(--content-color);
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
         }
 
         h1, h2, h3, h4, h5, h6, p, li {
-            color: var(--fg-color);
-            background-color: var(--bg-color);
+            color: var(--content-color);
+            background-color: var(--background-color);
             margin: 0.5em 0;
         }
 
         a {
             color: var(--link-color);
+            text-decoration: none;
         }
 
-        .title { font-size: 2em; margin-bottom: 0.75em; }
-        .subtitle, h2, h3, h4, h5, h6 { color: var(--sub-color); }
+        .title {
+            font-size: 2em;
+            margin-bottom: 0.75em;
+            color: var(--primary-color);
+        }
+        .subtitle, h2, h3, h4, h5, h6 {
+            color: var(--secondary-color);
+        }
     </style>
 </head>
 
