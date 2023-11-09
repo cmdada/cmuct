@@ -29,23 +29,35 @@
             padding: 0;
         }
 
+        .content {
+            margin: 1em 5em;
+        }
+        
         h1, h2, h3, h4, h5, h6, p, li {
             color: var(--fg-color);
             background-color: var(--bg-color);
-            margin: 0.5em 0;
+            margin: 0.75em 0;
+            line-height: 1.6;
         }
-
+        
+        h1.title {
+            font-size: 2.2em;
+            margin-bottom: 1em;
+        }
+        
         a {
             color: var(--link-color);
+            text-decoration: none;
         }
-
-        .title { 
-            font-size: 2em;
-            margin-bottom: 0.75em;
+        
+        a:hover {
+            text-decoration: underline;
         }
 
         .subtitle, h2, h3, h4, h5, h6 { 
-            color: var(--sub-color);
+            color: var(--sub-color); 
+            font-size: 1.6em;
+            margin-top: 2em;
         }
     </style>
 </head>
@@ -53,18 +65,13 @@
 <body>
     <div class="content">
         <h1 class="title">Evaluating the 2D Vector and Raster Graphics Processing Proficiency of CMU CS Academy's IDE</h1>
-
         <h2 class="subtitle">Introduction</h2>
         <p>This paper sets out to evaluate the computational capabilities of CMU Computer Science (CS) Academy's Integrated Development Environment (IDE) in processing 2D vector and raster graphics.</p>
-
         <h2 class="subtitle">Methodology</h2>
         <p>The evaluation framework centers on the continuous creation and rendering of 2D objects while closely observing the total count of objects effectively processed by the CS Academy's IDE. The selection of test objects comprised vector shapes, along with raster text, that I found to fetch fonts from fonts.google.com based on network requests and debugging observations.</p>
-
         <h2 class="subtitle">Evaluation Method</h2>
         <p>Performance testing was carried out using a system equipped with a 12th generation Intel Core i7 processor, 16GB RAM, and an Nvidia T1000 with 4GB of GDDR6, running on Windows 10. The testing spans were deployed on Firefox and Google Chrome.</p>
-        <p>Firefox demonstrated performance of an average count of 5,423 shapes over ten runs, with each stress test lasting near five minutes before the page became unresponsive, prompting either the browser or the system to crash.</p>
-        <p>The variability among the data on Chromium-based browsers shows that this test may not be optimal for Chromium-based browsers. For a performance log recorded via Firefox's built-in profiler, click [here](http://go.poweredge.xyz/perf).</p>
-
+        <p>Firefox demonstrated performance of an average count of 5,423 shapes over ten runs, with each stress test lasting near five minutes before the page became unresponsive, prompting either the browser or the system to crash. The variability among the data on Chromium-based browsers shows that this test may not be optimal for Chromium-based browsers. For a performance log recorded via Firefox's built-in profiler, click <a href="http://go.poweredge.xyz/perf">here</a>.</p>
         <h2 class="subtitle">Analysis of CMU CS Academy's Graphics Rendering</h2>
         <p>As far as I can tell, CMU CS Academy leverages Brython to execute code in a Python 3 environment, and Ace Editor as the code editor. While Brython supports outputting to a display, doing so requires specific JS frameworks that support doing so, and due to CMU's use of Ace, it seems that none of these frameworks would be compatible. To avoid this, they wrote a graphic library that renders directly to the webpage, but did not make it able to handle multiple shapes at once. To get around this, upon a shape or a text label being created, CMU CS Academy spawns a new process of their JS graphics library.</p>
     </div>
